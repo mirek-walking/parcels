@@ -25,7 +25,6 @@ import java.util.*;
  * Parcel service app
  * <p>
  * the main method scans the system input and print the sorted list of parcels every 60 seconds
- * TODO input from a text file
  *
  * @author mirek
  */
@@ -39,7 +38,7 @@ public class Parcels {
             public void run() {
                 printList();
             }
-        }, 0, TIMEOUT);
+        }, TIMEOUT, TIMEOUT);
         try {
             Parcel parcel;
             do {
@@ -48,10 +47,10 @@ public class Parcels {
                     parcelList.add(parcel);
                 }
             } while (parcel != null);
-            parcelList.stream().sorted().forEach(p -> System.out.println(p.toString()));
         } finally {
             keyboard.close();
             timer.cancel();
+            printList();
             System.out.println("Parcel service was stopped.");
         }
     }
@@ -60,6 +59,8 @@ public class Parcels {
     private static final Collection<Parcel> parcelList = Collections.synchronizedList(new ArrayList<>());
 
     private static void printList() {
+        System.out.println();
         parcelList.stream().sorted().forEach(p -> System.out.println(p.getPostalCode() + ' ' + p.getWeight()));
+        System.out.println();
     }
 }

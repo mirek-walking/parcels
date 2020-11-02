@@ -25,8 +25,10 @@ HOMEWORK
 * in the project directory:
   * prepare the project    
     * `mvn install` 
-  * run the project    
+  * run the project (console input)    
     * `mvn exec:java -Dexec.mainClass=cz.mirek.Parcels`
+  * run the project  (file input)  
+    * `mvn exec:java -Dexec.mainClass=cz.mirek.Parcels<input.txt`
 
 ## Features
 - read user input from console, user enters line consisting of weight of package and destination postal code
@@ -35,7 +37,7 @@ HOMEWORK
 
 - process user command “quit”, when user enters quit to command line as input, program should exit
 
-- take and process command line argument specified at program run – filename of file containing lines in same format as user can enter in command line. This is considered as initial load of package information. (not implemented yet)
+- take and process command line argument specified at program run – filename of file containing lines in same format as user can enter in command line. (To redirect input from a file use the less-than symbol (<).)
 
 - handle invalid input of user (if some line of the input is invalid, the line will be ignored and user can insert next line)
 

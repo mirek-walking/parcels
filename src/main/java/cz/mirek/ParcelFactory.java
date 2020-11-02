@@ -39,7 +39,7 @@ public class ParcelFactory {
         Parcel parcel = null;
         do {
             try {
-                System.out.println("Enter 'weight'<space>'postal code' or 'quit':");
+                System.out.println("Enter 'weight'<space>'postal code' (or enter 'quit'):");
                 Pattern weightPattern = Pattern.compile("QUIT|quit|[0-9]*\\.[0-9]{3}");
                 String weight = input.next(weightPattern);
                 if (weight.toLowerCase().equals("quit")) {
@@ -48,6 +48,7 @@ public class ParcelFactory {
                 Pattern postalCodePattern = Pattern.compile("[0-9]{5}");
                 String postalCode = input.next(postalCodePattern);
                 parcel = new Parcel(Double.parseDouble(weight), postalCode);
+                System.out.println(parcel.toString());
             } catch (java.util.InputMismatchException ex) {
                 System.out.println("Input error, try it again, please.");
             } finally {
