@@ -5,7 +5,7 @@
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [Example  of usage](#example-of-usage)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
@@ -21,26 +21,21 @@ HOMEWORK
 * Java
 * Maven
 
-## Example  of usage
-`mvn exec:java -Dexec.mainClass=App`
+## Example of usage
+* in the project directory:
+  * `mvn compile` 
+  * `mvn exec:java -Dexec.mainClass=cz.mirek.Parcels`
 
 ## Features
-Package delivery
-
-Write a command line program that keeps a record of packages processed. Each package information consists of weight (in kg) and destination postal code. Think about these packages in the same way, when you send one using postal office. Data should be kept in memory (please don’t introduce any database engines).
-
-
-The program should:
-
 - read user input from console, user enters line consisting of weight of package and destination postal code
 
 - once per minute - write output to console, each line consists of postal code and total weight of all packages for that postal code
 
 - process user command “quit”, when user enters quit to command line as input, program should exit
 
-- take and process command line argument specified at program run – filename of file containing lines in same format as user can enter in command line. This is considered as initial load of package information
+- take and process command line argument specified at program run – filename of file containing lines in same format as user can enter in command line. This is considered as initial load of package information. (not implemented yet)
 
-- handle invalid input of user (it is up to you how, describe implemented behaviour in readme file)
+- handle invalid input of user (if some line of the input is invalid, the line will be ignored and user can insert next line)
 
 
 Sample input:

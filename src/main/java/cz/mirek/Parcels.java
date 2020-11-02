@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2020, mirek. All rights reserved.
- * DO NOT ALTER OR REOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
@@ -41,7 +41,7 @@ public class Parcels {
             }
         }, 0, TIMEOUT);
         try {
-            Parcel parcel = null;
+            Parcel parcel;
             do {
                 parcel = parcelFactory.getParcel(keyboard);
                 if (parcel != null) {
@@ -51,13 +51,15 @@ public class Parcels {
             parcelList.stream().sorted().forEach(p -> System.out.println(p.toString()));
         } finally {
             keyboard.close();
+            timer.cancel();
+            System.out.println("Parcel service was stopped.");
         }
     }
 
     private static final long TIMEOUT = 60 * 1000L;  // 60 seconds
-    private static final Collection<Parcel> parcelList = Collections.synchronizedList(new ArrayList<Parcel>());
+    private static final Collection<Parcel> parcelList = Collections.synchronizedList(new ArrayList<>());
 
-    private static final void printList() {
+    private static void printList() {
         parcelList.stream().sorted().forEach(p -> System.out.println(p.getPostalCode() + ' ' + p.getWeight()));
     }
 }

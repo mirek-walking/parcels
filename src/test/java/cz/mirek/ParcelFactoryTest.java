@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2020, mirek. All rights reserved.
- * DO NOT ALTER OR REOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
@@ -27,6 +27,7 @@ import java.util.Scanner;
 /**
  * Unit test for ParcelFactory.
  */
+
 public class ParcelFactoryTest extends TestCase {
 
     private static final ParcelFactory FACTORY = new ParcelFactory();
@@ -46,6 +47,6 @@ public class ParcelFactoryTest extends TestCase {
      */
     public void testGetParcelQuit() {
         Parcel parcel = FACTORY.getParcel(new Scanner("quit\n").useLocale(Locale.US));
-        assertEquals(parcel, null);
+        assertNull(parcel);
     }
 }

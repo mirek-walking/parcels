@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2020, mirek. All rights reserved.
- * DO NOT ALTER OR REOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
@@ -19,7 +19,7 @@
 
 package cz.mirek;
 
-public class Parcel implements Comparable<Parcel>{
+public class Parcel implements Comparable<Parcel> {
     public Parcel(Double weight, String postalCode) {
         this.weight = weight;
         this.postalCode = postalCode;
@@ -46,7 +46,7 @@ public class Parcel implements Comparable<Parcel>{
 
     @Override
     public String toString() {
-        return "Parcel [postalCode=" + postalCode + "; weight=" + weight +"]";
+        return "Parcel [postalCode=" + postalCode + "; weight=" + weight + "]";
     }
 
     @Override
