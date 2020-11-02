@@ -23,8 +23,10 @@ HOMEWORK
 
 ## Example of usage
 * in the project directory:
-  * `mvn compile` 
-  * `mvn exec:java -Dexec.mainClass=cz.mirek.Parcels`
+  * prepare the project    
+    * `mvn install` 
+  * run the project    
+    * `mvn exec:java -Dexec.mainClass=cz.mirek.Parcels`
 
 ## Features
 - read user input from console, user enters line consisting of weight of package and destination postal code
